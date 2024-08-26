@@ -1,0 +1,102 @@
+<!-- Group name: node OurLameGroupName.js
+Jo-Anne van der Wath (577394)
+Henry Roux (577440)
+Leonard Vermeer (577309) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="validation.js"></script>
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            <h1>Basic Details</h1>
+            <hr>
+            <form name="inputForm" autocomplete="off" id="form">
+                <div class="form-group" id="one">
+                    <input type="text" id="firstName" class="error" onblur="validateName(firstName)" required>
+                    <label for="firstName">First Name</label>
+                    <div id="errorfirstName" class="errorMessage"></div>
+                </div>
+
+                <div class="form-group" id="two">
+                    <input type="text" id="lastName" class="error" onblur="validateLastName(lastName)" required>
+                    <label for="lastName">Last Name</label>
+                    <div id="errorlastName" class="errorMessage"></div>
+                </div>
+
+                <div class="form-group" id="three">
+                    <div class="input-container">
+                        <label for="emailID">Email ID</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="emailID" class="input-field" class="error" onblur="validateEmail(emailID)" required>
+                            <i id="statusIcon" class="status-icon"></i>
+                        </div>
+                    </div>
+                    <div id="erroremailID" class="errorMessage"></div>
+                </div>
+
+                <div class="form-group" id="four">
+                    <div class="input-container">
+                        <input type="text" id="userID" class="error" onblur="validateUserID(userID)">
+                        <span id="lockIconUserID" class="lock-icon" style="display: none;"></span>
+                    </div>
+                    <label for="userID">Your User ID</label>
+                    <div id="erroruserID" class="errorMessage"></div>
+                </div>
+
+
+                <div class="form-group" id="five">
+                    <select name="country" id="country" class="error" onblur="validateCountry(country)" required>
+                        <option value="Default" selected>Choose an option</option>
+                        <option value="SouthAfrica">South Africa</option>
+                        <option value="India">India</option>
+                        <option value="Namibia">Namibia</option>
+                    </select>
+                    <label for="country">Country</label>
+                    <div id="errorcountry" class="errorMessage"></div>
+                </div>
+
+                <div class="form-group" id="six">
+                    <select name="state" id="state" class="error" onblur="validateState(state)" required>
+                        <option value="Default" selected>Choose an option</option>
+                        <option value="Limpopo">Limpopo</option>
+                        <option value="Gauteng">Gauteng</option>
+                        <option value="Freestate">Freestate</option>
+                    </select>
+                    <label for="state">State</label>
+                    <div id="errorstate" class="errorMessage"></div>
+                </div>
+
+                <div class="form-group" id="seven">
+                    <select name="city" id="city" class="error" onblur="validateCity(city)" required>
+                        <option value="Default" selected>Choose an option</option>
+                        <option value="Pretoria">Pretoria</option>
+                        <option value="Durban">Durban</option>
+                        <option value="Bloemfontein">Bloemfontein</option>
+                    </select>
+                    <label for="city">City</label>
+                    <div id="errorcity" class="errorMessage"></div>
+                </div>
+
+                <div class="form-group" id="eight">
+                    <input type="text" id="phoneNumber" class="error" onblur="validatePhoneNumber(phoneNumber)" required> 
+                    <label for="phoneNumber" class="left">Phone Number</label>
+                    <div id="errorphoneNumber" class="errorMessage"></div>
+                </div>
+
+                <div class="form-group" id="nine">            
+                    <input type="text" id="referenceCode" placeholder="Reference Code" class="error" onblur="validateReferenceCode(referenceCode)" required>
+                    <label for="referenceCode"></label>  
+                    <div id="errorreferenceCode" class="errorMessage"></div>
+                </div>
+            </form>
+            <hr>
+            <button id="resetButton">Reset All</button>
+            <button id="continueButton" onclick="validateForm()">Continue</button>
+        </div>
+    </div>
+</body>
+</html>
